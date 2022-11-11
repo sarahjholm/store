@@ -52,7 +52,7 @@ public class PricesService {
         double basePrice = basePriceMap.get(finalPrice.getBasePrice());
 
         double priceAfterTax = finalPrice.getPrice();
-        double tax = Math.floor(((priceAfterTax - basePrice) / basePrice) * 100) / 100; // calculate tax as percentage
+        double tax = Math.floor(((priceAfterTax - basePrice)*100 / basePrice) * 100) / 100; // calculate tax as percentage
         tax = Math.abs(tax);
 
         PricesAfterTax pricesAfterTax = new PricesAfterTax(
